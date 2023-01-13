@@ -10,7 +10,7 @@ export const routerAuth= Router();
 routerAuth.post('/',
 check('email','INSERT A VALID EMAIL').isEmail(),
 check('password','INSERT A VALID PASSWORD').not().isEmpty(),
-check('password','PLEASE INSERT A VALID PASSWORD (MIN 6 CHARACTERS)').isLength({min:6}),
+check('password','PLEASE INSERT A VALID PASSWORD').isLength({min:6}),
 comprobarCampos,
 authControllerLoginPost)
 

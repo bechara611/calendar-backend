@@ -95,14 +95,14 @@ export const eliminarEvento =async (req = request, res = response) => {
     }
 
     if(existe.user.toString()!==req.uid){
-     return   res.status(401).json({
+        res.status(401).json({
             ok:false,
             msg:`YOU DON'T HAVE PERMISSION TO DO THAT ACTION.`
         })
     }
     const eventoEliminado = await eventos.findByIdAndDelete(id,{new:true})
 
-   return res.status(200).json({
+    res.status(200).json({
         ok: true,
         msg: 'DELETED',
         evento: eventoEliminado

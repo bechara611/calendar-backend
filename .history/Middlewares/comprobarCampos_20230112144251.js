@@ -2,12 +2,12 @@ import { request, response } from "express";
 import { validationResult } from "express-validator";
 
 export const comprobarCampos=(req=request,res=response,next)=>{
-    const error = validationResult(req)
+    const errors = validationResult(req)
     
-    if (!error.isEmpty()) {
+    if (!errores.isEmpty()) {
         return res.status(400).json({
             ok:false,
-            error
+            errors
         })
     }
     next()
